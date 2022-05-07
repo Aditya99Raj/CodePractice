@@ -159,3 +159,81 @@ Array.prototype.BluePrint=function(logic){
 //   return item%2==0;
 // }))
 
+
+// ----------------------------------------------------------------------------------------------------------------------
+
+// Reduce function 
+
+// what is reduce function do ?
+// just like name suggest to reduce function is used to reduce the data from array to single value like find sum of all the number in array and alos find the max, min number of the array ;
+
+
+let arr=[1,2,3,4,5,6];
+
+// before understand what is reduce function do first write a function to return sum of all the number in array
+
+// lets write 
+
+function sumFun(arr){
+    let sum=0
+    for(let i=0 ; i<arr.length ; i++){
+        sum=sum+arr[i];
+    }
+    return sum ;
+}
+
+// console.log(sumFun(arr)); 
+// this is sum of all the number in array output is 21
+
+// now lets write a reducer function
+
+const sumReducer=arr.reduce(function(acc,cur){
+    acc=acc+cur;
+    return acc;
+},0)
+
+// console.log(sumReducer);
+
+// look in this reducer function code is very simple call back function take two argument first is accumulator and second is current value
+
+// what is accumulator ?
+// accumulator is a variable that hold the value of previous value and current value I will simplefy it accumulator is nothing but is similar like sum variable in above sumFun function to I am take to hold value of my result
+
+// what is current value ?
+// current value is a variable that hold the value of current value in array let simplefy this also current value is nothing but is similar like arr[i] it take in above sumFun function to I am take to current value in over array or loop 
+
+// also reducer function take two argument first is callback function and second is initial value of accumulator is similar like sum=0 in above sumFun function
+
+
+// write one more example for better understand
+
+// this time we find max number in array
+
+// first write a normal function to achieve this 
+
+
+function maxFun(arr){
+    let max=-Infinity;
+    for(let i=0 ; i<arr.length ; i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    return max;
+}
+
+// console.log(maxFun(arr));
+
+// let write a reducer function to achieve this
+
+let output=arr.reduce(function(acc,cur){
+ if(cur>acc){
+     acc=cur;
+ }
+ return acc;
+},-Infinity)
+
+// console.log(output);
+
+
+// ---------------------------------------------------------------------------------------------------------------------
