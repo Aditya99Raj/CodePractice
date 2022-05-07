@@ -16,7 +16,7 @@ function Area(radius){
 }
 
 
-console.log(Area(radius));
+// console.log(Area(radius));
 
 
 // calculate diameter of circle
@@ -29,11 +29,11 @@ function Diameter(radius){
     return answer;
 }
 
-console.log(Diameter(radius));
+// console.log(Diameter(radius));
 
 // show in this code lot of code repated in a function so not good for DRY principle
 
-// opimize code by using DRY principle
+// optimize code by using DRY principle
 
 // this a blue print of function
 
@@ -53,7 +53,7 @@ function area(radius){
     return Math.PI*radius*radius;
 }
 
-console.log(BluePrint(radius,area));
+// console.log(BluePrint(radius,area));
 
 // logic for a diameter 
 
@@ -61,4 +61,29 @@ function diameter(radius){
     return radius*2;
 }
 
-console.log(BluePrint(radius,diameter));
+// console.log(BluePrint(radius,diameter));
+
+
+// task is write a own map function 
+
+// original map function is 
+
+console.log(radius.map(area));
+
+console.log(BluePrint(radius,area));
+
+// above code is give me same output but not look like similar 
+
+// let make similar code look like this
+
+Array.prototype.BluePrint=function(logic){
+    let answer=[];
+    for(let i=0 ; i<this.length ;i++){
+        answer.push(logic(this[i]));
+    }
+    return answer ; 
+}
+
+console.log(radius.BluePrint(area));
+
+// now we can use this code as map function in our code 
