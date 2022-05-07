@@ -63,6 +63,7 @@ function diameter(radius){
 
 // console.log(BluePrint(radius,diameter));
 
+// --------------------------------------------------------------------------------------------------------------------------------------
 
 // task is write a own map function 
 
@@ -88,6 +89,8 @@ Array.prototype.BluePrint=function(logic){
 
 // now we can use this code as map function in our code 
 
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 // let understand how to use map and where to use iton code 
 
@@ -129,3 +132,30 @@ Array.prototype.BluePrint=function(logic){
 // console.log(Arraymap.map(binary));
 
 // this is usecase of map function
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+// filter function
+
+// filter function is used to filter out the data from array
+
+// let take a exmple of array 
+
+// let Arrayfilter=[1,2,3,4,5,6];
+
+// I want to find all the odd number from this array
+
+// console.log(Arrayfilter.filter(isOdd))
+
+// function isOdd(item){
+//     return item%2 ;
+// }
+
+// show is above code i am not write item%2==1 beacuse any even number are come to my result is 0 and 0 is falsely value so it will not show in my result
+
+// I want to find all the even number from this array
+
+// console.log(Arrayfilter.filter(function(item){
+//   return item%2==0;
+// }))
+
