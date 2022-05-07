@@ -1,7 +1,4 @@
 
-
-
-
 class Store{
     constructor(reducer,initState){
         this.state=initState;
