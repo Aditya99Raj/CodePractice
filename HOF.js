@@ -237,3 +237,53 @@ let output=arr.reduce(function(acc,cur){
 
 
 // ---------------------------------------------------------------------------------------------------------------------
+
+// let see a real life example of reduce,filter,map 
+
+const user=[
+    {firstname:"Dhruv",lastname:"ambaliya",age:24},
+    {firstname:"vraj",lastname:"shah",age:26},
+    {firstname:"anuj",lastname:"tart",age:21},
+    {firstname:"yagnesh",lastname:"solanki",age:23},
+    {firstname:"gautam",lastname:"verma",age:29},
+    {firstname:"prashant",lastname:"Bhatiya",age:29},
+]
+
+// first task to write fullname of all user 
+
+const first=user.map(function(e){
+    return e.firstname+" "+e.lastname;
+})
+
+// console.log(first);
+
+// second task is to find how many user are similar age like {30:2,21:1,24:1};
+
+const second=user.reduce(function(acc,cur){
+  if(acc[cur.age]){
+    acc[cur.age]=acc[cur.age]+1;
+  }
+  else{
+      acc[cur.age]=1;
+  }
+
+  return acc;
+},{})
+
+
+// console.log(second);
+
+// third task is how many user are 29 and print only fullname of as array like ["gautam verma","prashant bhatiya"]
+
+// In this task we use filter for filter data and for array from we use map 
+// this a functional chaing of filter and map
+
+const third=user.filter(function(e){
+    return e.age==29;
+}).map((e)=>e.firstname+" "+e.lastname);
+
+
+// console.log(third);
+
+
+// -------------------------------------------------------------------------------------------------------------
