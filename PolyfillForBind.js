@@ -9,8 +9,8 @@ const user={
     lastname:"ambaliya",
 }
 
-function fullname(state,gender,age){
-    return this.firstname+" "+this.lastname+" "+state+" "+gender+" "+age;
+function fullname(state,age){
+    return this.firstname+" "+this.lastname+" "+state+" "+age;
 }
 
 
@@ -32,3 +32,6 @@ Function.prototype.mybind=function(...argument){
 
 const result1=fullname.mybind(user,"Gujarat","Male");
 console.log(result1(26));
+
+
+
