@@ -92,7 +92,7 @@ Array.prototype.BluePrint=function(logic){
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
 
-// let understand how to use map and where to use iton code 
+// let understand how to use map and where to use it on code 
 
 // let one array is given and we want to transformation to this array to we use map 
 
