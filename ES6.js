@@ -132,6 +132,8 @@ function createData(newData){
 
 // also use async await method
 
+/*
+
 async function start(){
     try {
       await createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"});
@@ -143,3 +145,21 @@ async function start(){
 }
 
 start();
+
+*/
+// bounch knowledge
+
+// one more method to call function without any call and name
+
+(async function(){
+    try {
+        await createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"});
+          getData();
+      } catch (error) {
+          console.log("error");
+      }
+   
+})();
+
+//  also refer this like to know more function expression "https://stackabuse.com/javascripts-immediately-invoked-function-expressions/"
+
