@@ -79,13 +79,14 @@ function getData(){
 }
 
 
-
+/*
 function createData(newData,callback){
     setTimeout(()=>{
         users.push(newData)
          callback();
     },2000)
 }
+*/
 
 // before callback function code is not working properly not show shivam as output
 /*
@@ -103,7 +104,42 @@ createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"});
 
 // I use getData as a callback function in createData function
 
-createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"},getData);
+// createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"},getData);
 
 // now look in output it is show "Dhruv" "Maulik" "Raj" "Shivam"
 
+
+
+// also one more method to solve this problem is using Promise
+
+function createData(newData){
+    return new Promise((resolve,reject)=>{
+       setTimeout(()=>{
+             users.push(newData);
+             let error=false;
+                if(!error){
+                    resolve();
+                }else{  
+                    reject("error");
+                }
+       },3000)
+    })
+}
+
+
+// createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"}).then(()=>{getData()}).catch((erorr)=>{console.log("error")})
+
+
+// also use async await method
+
+async function start(){
+    try {
+      await createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"});
+        getData();
+    } catch (error) {
+        console.log("error");
+    }
+ 
+}
+
+start();
