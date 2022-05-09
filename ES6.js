@@ -33,3 +33,25 @@ function printName3(...arr){
 }
 
 printName3(...arr);
+
+
+// also spread operator use in object and override object property
+
+let originalObj={
+    name:"Dhruv",
+    age:24,
+    hobbies:["coding","reading"],
+}
+
+// on we have override age property and add one more hobbies
+
+let newObj={
+    ...originalObj,
+    age:25,
+    hobbies:[...originalObj.hobbies,"cycle"]
+}
+
+console.log(originalObj);
+console.log(newObj);
+
+
