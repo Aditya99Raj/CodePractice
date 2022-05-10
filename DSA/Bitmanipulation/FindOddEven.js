@@ -86,3 +86,25 @@ for(let i=0 ; i<Input1.length ; i++){
 console.log(output1);
 
 
+// How to convert dicemal number into binary number
+
+// first write 2 multiple series 1 to your requiredment
+
+//  1 2 4 6 8 16 32 64 128 256 ............. like these ok
+
+// your input is 8 so you can do one thing find 8 number on above series and put 1 and rest will be 0 but one thing write this series in reverse order
+
+// 64  32  16  8  4  2  1
+// 0   0   0   1  0  0  0
+
+// result of 8 is 0 0 0 1 0 0 0 and also write 1 0 0 0 
+
+// now find 27 
+
+// 64  32  16  8  4  2  1
+// 0   0   1   1  0  1  1
+
+// result of 8 is 0 0 1 1 0 1 1 and also write 1 1 0 1 1 
+
+
+
