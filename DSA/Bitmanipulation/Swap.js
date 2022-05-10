@@ -2,6 +2,7 @@
 
 // how many way to swap two numbers?
 
+
 //  let's see
 
 let a=10;
