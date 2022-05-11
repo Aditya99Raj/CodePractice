@@ -42,22 +42,3 @@
 // console.log(store.getstate());
 
 
-
-let arr=[1,2,3]
-
-let ans=[]
-let index=0;
-
-subset(arr,ans,index);
-
-function subset(arr,ans,index){
-    console.log(ans);
-    if(index==arr.length){
-        return;
-    }
-    for(let i=index ; i<arr.length ; i++){
-        ans.push(arr[i]);
-        subset(arr,ans,i+1);
-        ans.pop();
-    }
-}
