@@ -34,4 +34,3 @@ const result1=fullname.mybind(user,"Gujarat","Male");
 console.log(result1(26));
 
 
-
