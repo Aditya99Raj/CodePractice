@@ -30,3 +30,4 @@ function debounce(searchMovie,dealy){
       searchMovie()
     },dealy)
 }
+
