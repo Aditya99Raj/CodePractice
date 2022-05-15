@@ -118,6 +118,7 @@ console.log(AnshAccount);
 
 // we have show in above code add any method on the constructor so add through prototype property but in class not require to add prototype property on constructor function
 
+/*
 class BankAccount {
     // constructor is a one method of class and in the constructor function we can add the property 
     constructor(customerName, balance = 0) {
@@ -139,5 +140,152 @@ class BankAccount {
 const DhruvAccount = new BankAccount("Dhruv Ambaliya", 1000)
 console.log(DhruvAccount)
 
+*/
 // look at the output of class it similar like constructor function 
 
+
+// -------------------------------------------------------------------------------------------------------------------------
+
+// what is inheritance
+// inheritance is a process of creating a new object from an existing object
+
+// let's create a problem any solve useing inheritance
+
+/*
+
+function BankAccount (customerName,balance=0){
+
+    // this is property of the constructor function
+    this.customerName=customerName;
+    this.AccountNumber=Date.now();
+    this.balance=balance;
+
+}
+
+
+BankAccount.prototype.deposit=function(amount){
+    this.balance+=amount;
+}
+BankAccount.prototype.withdraw=function(amount){
+    this.balance-=amount;
+}
+
+
+// we want to create a more Account in our bank like current account and saving account
+
+// so simple copy and past BankAccount code and change some property and change the name of the constructor function 
+
+function CurrentAccount (customerName,balance=0){
+
+    // this is property of the constructor function
+    this.customerName=customerName;
+    this.AccountNumber=Date.now();
+    this.balance=balance;
+    // new property
+    this.limit=50000
+
+}
+
+CurrentAccount.prototype.BussinessLone=function(amount){
+    console.log(`take BussinessLone for your BussinessLone ${amount}` )
+}
+ 
+CurrentAccount.prototype.deposit=function(amount){
+    this.balance+=amount;
+}
+CurrentAccount.prototype.withdraw=function(amount){
+    this.balance-=amount;
+}
+
+function SaveingAccount (customerName,balance=0){
+
+    // this is property of the constructor function
+    this.customerName=customerName;
+    this.AccountNumber=Date.now();
+    this.balance=balance;
+    // new property
+    this.limit=10000
+
+}
+
+SaveingAccount.prototype.PersonalLone=function(amount){
+    console.log(`take PersonalLone for your PersonalLone ${amount}` )
+}
+ 
+SaveingAccount.prototype.deposit=function(amount){
+    this.balance+=amount;
+}
+SaveingAccount.prototype.withdraw=function(amount){
+    this.balance-=amount;
+}
+
+const DhruvAccount=new BankAccount("Dhruv Ambaliya",50000)
+const YagneshAccount=new CurrentAccount("Yagnesh",600000)
+const VrajAccount=new SaveingAccount("Vraj",10000)
+console.log(DhruvAccount,YagneshAccount,VrajAccount)
+
+*/
+//  ok this a solution for the problem but we have to repeat the code again and again and not follow DRY principle
+// we have use inheritance of BankAccount function to a Saving and current account function
+
+
+// first remove all repeat code 
+// useing call method to inherit the property of BankAccount function
+// useing Object.create to inherit the method of BankAccount function on Prototype property 
+
+
+function BankAccount (customerName,balance=0){
+
+    // this is property of the constructor function
+    this.customerName=customerName;
+    this.AccountNumber=Date.now();
+    this.balance=balance;
+
+}
+
+
+BankAccount.prototype.deposit=function(amount){
+    this.balance+=amount;
+}
+BankAccount.prototype.withdraw=function(amount){
+    this.balance-=amount;
+}
+
+function CurrentAccount (customerName,balance=0){
+    // inherit the property of BankAccount function
+   BankAccount.call(this,customerName,balance)
+    // new property
+    this.limit=50000
+
+}
+
+CurrentAccount.prototype.BussinessLone=function(amount){
+    console.log(`take BussinessLone for your BussinessLone ${amount}` )
+}
+
+CurrentAccount.prototype=Object.create(BankAccount.prototype)
+ 
+
+
+function SaveingAccount (customerName,balance=0){
+    // inherit the property of BankAccount function
+  BankAccount.call(this,customerName,balance)
+    // new property
+    this.limit=10000
+
+}
+
+SaveingAccount.prototype.PersonalLone=function(amount){
+    console.log(`take PersonalLone for your PersonalLone ${amount}` )
+}
+
+SaveingAccount.prototype=Object.create(BankAccount.prototype)
+
+const DhruvAccount=new BankAccount("Dhruv Ambaliya",50000)
+const YagneshAccount=new CurrentAccount("Yagnesh",600000)
+
+const VrajAccount=new SaveingAccount("Vraj",10000)
+console.log(DhruvAccount,YagneshAccount,VrajAccount)
+
+
+// now look the code is very clean and not repeat code again and again 
