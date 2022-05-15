@@ -233,7 +233,7 @@ console.log(DhruvAccount,YagneshAccount,VrajAccount)
 // useing call method to inherit the property of BankAccount function
 // useing Object.create to inherit the method of BankAccount function on Prototype property 
 
-
+/*
 function BankAccount (customerName,balance=0){
 
     // this is property of the constructor function
@@ -287,5 +287,55 @@ const YagneshAccount=new CurrentAccount("Yagnesh",600000)
 const VrajAccount=new SaveingAccount("Vraj",10000)
 console.log(DhruvAccount,YagneshAccount,VrajAccount)
 
-
+*/
 // now look the code is very clean and not repeat code again and again 
+
+
+// ---------------------------------writen this inhernit code in class-----------------------------------------------------
+
+
+
+class BankAccount {
+    constructor(customerName,balance=0){
+        this.customerName=customerName;
+        this.AccountNumber=Date.now();
+        this.balance=balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount
+    }
+
+    withdraw(amount) {
+        this.balance -= amount
+    }
+}
+
+class CurrentAccount extends BankAccount{
+    constructor(customerName,balance=0){
+        super(customerName,balance)
+        this.limit=50000
+    
+    }
+
+    BussinessLone(amount){
+        console.log(`take BussinessLone for your BussinessLone ${amount}` )
+    }
+}
+
+class SaveingAccount extends BankAccount{
+    constructor(customerName,balance=0){
+        super(customerName,balance)
+        this.limit=10000
+    
+    }
+
+    PersonalLone(amount){
+        console.log(`take PersonalLone for your PersonalLone ${amount}` )
+    }
+}
+
+
+const DhruvAccount = new SaveingAccount("Dhruv Ambaliya", 5000)
+DhruvAccount.deposit(50000)
+console.log(DhruvAccount)
