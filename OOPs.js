@@ -67,13 +67,15 @@ console.log(DhruvAccount);
 
 // -------------------------------------------------------------------------------------------------------------------
 
+// Prototype 
+
 // In previous example we have created a constructor function and saw in every object method is common to all object but we have still repeting the code that why cover more memory so how to resolve this problem
 
 // Prototype is come under the picture 
 
 // add Prototype property on constructor function and we use to this property in every object is created from this blueprint
 
-
+/*
 function BankAccount (customerName,balance=0){
 
     // this is property of the constructor function
@@ -101,4 +103,41 @@ AnshAccount.deposit(400)
 AnshAccount.withdraw(200)
 console.log(AnshAccount);
 
+*/
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+// Class
+
+// class is syntactic sugar for constructor function
+
+// class is introduced in ES6 and it is a syntactic sugar for constructor function
+
+// first question in the mind is why we use class and not constructor function 
+
+// we have show in above code add any method on the constructor so add through prototype property but in class not require to add prototype property on constructor function
+
+class BankAccount {
+    // constructor is a one method of class and in the constructor function we can add the property 
+    constructor(customerName, balance = 0) {
+
+        this.customerName = customerName
+        this.AccountNumber = Date.now()
+        this.balance = balance
+    }
+
+    deposit(amount) {
+        this.balance += amount
+    }
+
+    withdraw(amount) {
+        this.balance -= amount
+    }
+}
+
+const DhruvAccount = new BankAccount("Dhruv Ambaliya", 1000)
+console.log(DhruvAccount)
+
+// look at the output of class it similar like constructor function 
 
