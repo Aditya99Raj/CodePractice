@@ -63,3 +63,42 @@ DhruvAccount.withdraw(200)
 console.log(DhruvAccount);
 
 */
+
+
+// -------------------------------------------------------------------------------------------------------------------
+
+// In previous example we have created a constructor function and saw in every object method is common to all object but we have still repeting the code that why cover more memory so how to resolve this problem
+
+// Prototype is come under the picture 
+
+// add Prototype property on constructor function and we use to this property in every object is created from this blueprint
+
+
+function BankAccount (customerName,balance=0){
+
+    // this is property of the constructor function
+    this.customerName=customerName;
+    this.AccountNumber=Date.now();
+    this.balance=balance;
+
+
+
+   
+}
+
+
+BankAccount.prototype.deposit=function(amount){
+    this.balance+=amount;
+}
+BankAccount.prototype.withdraw=function(amount){
+    this.balance-=amount;
+}
+
+
+
+let AnshAccount=new BankAccount("Ansh Ambaliya")
+AnshAccount.deposit(400)
+AnshAccount.withdraw(200)
+console.log(AnshAccount);
+
+
