@@ -293,7 +293,7 @@ console.log(DhruvAccount,YagneshAccount,VrajAccount)
 
 // ---------------------------------writen this inhernit code in class-----------------------------------------------------
 
-
+/*
 
 class BankAccount {
     constructor(customerName,balance=0){
@@ -338,4 +338,30 @@ class SaveingAccount extends BankAccount{
 
 const DhruvAccount = new SaveingAccount("Dhruv Ambaliya", 5000)
 DhruvAccount.deposit(50000)
+console.log(DhruvAccount)
+*/
+
+
+// --------------------------------------------------------------How to write a private property and method in class ---------------------
+
+
+// we have show in the starting we able to change of value in object but this casuse a problem in our functionality
+
+// like balance property is change like this DhruvAccount.balance=100000 and also write DhruvAccount.balance="Hello" so this not right value and this value effect our deposit and withdraw method because not a number 
+
+// how to resolve this problem so one method in class is to make a private property and method and use getter and setter method to access the private property and method
+
+
+class BankAccount {
+    #balance=0;
+    constructor(customerName,balance=0){
+        this.#balance=balance;
+        this.customerName=customerName;
+        this.AccountNumber=Date.now();
+    }
+
+
+}
+
+const DhruvAccount = new BankAccount("Dhruv A")
 console.log(DhruvAccount)

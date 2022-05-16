@@ -5,9 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      
+     
+      .box{
+          font-size: 50px;
+          color: wheat;
+          width:100%;
+          background-color:brown;
+          margin: auto;
+          display: none;
+          text-align: center;
+      }
+          
+      @media (max-width:530px){
+          #box-1{
+              display: block
+          }
+      }
+
+      @media (min-width:531px) and (max-width:800px){
+          #box-2{
+              display: block;
+              background-color: blue;
+          }
+      }
+
+      @media (min-width:801px) and (max-width:1200px){
+          #box-3{
+              display: block;
+              background-color: green;
+          }
+      }
+      @media (min-width:1201px){
+          #box-4{
+              display: block;
+              background-color: red;
+          }
+      }
+
+      
+
+
+    </style>
 </head>
 <body>
-    <h1>Hello world</h1>
+   
+    <div id="root"></div>
+ 
+        <div class="box" id="box-1">I am a Phone</div>
+        <div class="box"  id="box-2">I am a tablet</div>
+        <div class="box"  id="box-3">I am a leptop</div>
+        <div class="box"  id="box-4">I am a Desktop</div>
+
+
 </body>
 </html>
 <script src="index.js"></script>
