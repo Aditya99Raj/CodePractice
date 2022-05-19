@@ -51,9 +51,3 @@ setInterval(()=>{
 document.querySelector("#root").append(div);
 
 
-function getname(){
-   name="dhruv" 
-}
-
-grtname()
-console.log(name)

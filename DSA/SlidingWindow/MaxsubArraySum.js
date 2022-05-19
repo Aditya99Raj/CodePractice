@@ -35,3 +35,5 @@ console.log(max)
 // this way to optimize the time complexity is O(n) 
 
 // also one more thing how to identify the these question is sliding window or not so first check the any operation is releated to subarray or subString and after check in the question ask about maximum or minmum result and probebly given window size 
+
+
