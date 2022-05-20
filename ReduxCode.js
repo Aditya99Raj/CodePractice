@@ -42,4 +42,10 @@
 // console.log(store.getstate());
 
 
+function name(Myname){
+    console.log(`name is student ${Myname}`)
+}
+
+
+
 
