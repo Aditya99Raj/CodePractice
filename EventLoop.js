@@ -6,9 +6,9 @@ function first(){
 
 function second(){
     setTimeout(()=>{
-         console.log("second")
-    },1000)
-    
+        console.log("second")
+    },2000)
+
 }
 
 function third(){
