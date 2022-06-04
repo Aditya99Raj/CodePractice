@@ -98,7 +98,7 @@ createData({firstname:"Shivam",lastname:"Ambaliya",hobbies:"cycle"});
 // so simple answer is increase getdata time but these not right way to solve right way is using callback function in createData function
 
 // let's see code
-
+//test
 
 // after use callback function in createData function
 
